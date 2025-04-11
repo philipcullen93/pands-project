@@ -23,7 +23,7 @@ from sklearn import datasets
 # Importing the Iris datset
 iris = datasets.load_iris()
 
-# To check if the data has been successfully imported, I print the data.
+# To check if the data has been successfully imported and loaded, I print the data.
 print(iris)
 
 
