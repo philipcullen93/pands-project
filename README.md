@@ -35,6 +35,9 @@ The data for this project original comes from "The Use of Multiple Measuremanets
 Fisher's linear discrimiant statistical model served as the foundation for Linear Disciminant Analysis (LDA), also known as normal discriminant analysis (NDA) or discriminant function analysis (DFA). This model is used in machine learning, bioinformatics, and pattern recognicition. This allows analysts to take large complex datasets and simplify them while still preserving each classes unique information. By doing this it allows for better visualisation and interpretation of highly complex datsets.
 
 ## Required Modules
+- sklearn
+- NumPy
+- Matplotlib.pyplot
 
 ## How to Run the Program
 
