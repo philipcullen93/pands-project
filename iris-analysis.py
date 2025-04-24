@@ -34,9 +34,10 @@ iris.target_names
 print(iris.target_names)
 '''
 
-# provides aliases for each target allowing for more efficient coding and manipulation
+# provides variable names for each target allowing for more efficient coding and manipulation
 target = iris.target
 target_names = iris.target_names
+data = iris.data
 
 # The code below separates out the different variables of each species. 
 # This will make it easier when creating the histograms for each variable.
@@ -67,5 +68,25 @@ sepal_w = data[:,1]
 petal_l = data[:,2]
 petal_w = data[:,3]
 
+#Task 1: Variable Summary
+np_data = np.array(data)
+column_names = iris.feature_names
 
+# this code creates a loop that loops through each column in the dataset
+# it calculates the statistical data for each column
+# the statisitical data calculated is: mean, minimum, maximum, standard deviation, and median
 
+# Loops through each column in the dataset, i = each column in the dataset
+for i in range(data.shape[1]):
+
+    # extracts column i
+    column = data[ :, i]
+    # prints the name of each column
+    print(f"{column_names[i]}:")
+    # calculates and prints each of the statistical data
+    print("Mean:", float(np.mean(column)))
+    print("Minimum:", float(np.min(column)))
+    print("Maximum:", float(np.max(column)))
+    print("Standard Deviation:", float(np.std(column)))
+    print("Median:", float(np.median(column)))
+    print()
