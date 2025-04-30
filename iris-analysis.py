@@ -78,6 +78,9 @@ column_names = iris.feature_names
 
 # Loops through each column in the dataset, i = each column in the dataset
 
+# opens/creates a file called column_statistics
+# this is because of the "w"
+# if the file does exist, it won't create a new file but will overwrite the existing file.
 with open("column_statistics.txt", "w") as f:
     for i in range(data.shape[1]):
         # extracts column i
@@ -85,6 +88,7 @@ with open("column_statistics.txt", "w") as f:
         # prints the name of each column
         print(f"{column_names[i]}:", file=f)
         # calculates and prints each of the statistical data
+        # file=f is used to make sure the results are printed in a .txt file and not the vscode terminal
         print("Mean:", float(np.mean(column)), file=f)
         print("Minimum:", float(np.min(column)), file=f)
         print("Maximum:", float(np.max(column)), file=f)
