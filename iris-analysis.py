@@ -77,16 +77,17 @@ column_names = iris.feature_names
 # the statisitical data calculated is: mean, minimum, maximum, standard deviation, and median
 
 # Loops through each column in the dataset, i = each column in the dataset
-for i in range(data.shape[1]):
 
-    # extracts column i
-    column = data[ :, i]
-    # prints the name of each column
-    print(f"{column_names[i]}:")
-    # calculates and prints each of the statistical data
-    print("Mean:", float(np.mean(column)))
-    print("Minimum:", float(np.min(column)))
-    print("Maximum:", float(np.max(column)))
-    print("Standard Deviation:", float(np.std(column)))
-    print("Median:", float(np.median(column)))
-    print()
+with open("column_statistics.txt", "w") as f:
+    for i in range(data.shape[1]):
+        # extracts column i
+        column = data[:, i]
+        # prints the name of each column
+        print(f"{column_names[i]}:", file=f)
+        # calculates and prints each of the statistical data
+        print("Mean:", float(np.mean(column)), file=f)
+        print("Minimum:", float(np.min(column)), file=f)
+        print("Maximum:", float(np.max(column)), file=f)
+        print("Standard Deviation:", float(np.std(column)), file=f)
+        print("Median:", float(np.median(column)), file=f)
+        print("", file=f)
