@@ -95,3 +95,16 @@ with open("column_statistics.txt", "w") as f:
         print("Standard Deviation:", float(np.std(column)), file=f)
         print("Median:", float(np.median(column)), file=f)
         print("", file=f)
+
+# Task 2: Histograms
+# plot feature: Sepal Length (cm)
+plt.hist(sepal_l, bins = 20, edgecolor = 'black')
+# edgecolor = black, helps outline each bar on the histogram
+# bins = 20, put the data into 20 evenly spaced bars. A bins value that is too high or too low can make the data harder to interpret.
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Frequency")
+# plt.xlabel and plt.ylabel add labels to the x and y axes
+plt.title("Histogram of Sepal Length (cm)")
+# plt.tile adds a title to the histogram.
+plt.show()
+# plt.show() is required to display the histogram, without this the code will still run but won't display the resulting histogram.
