@@ -108,3 +108,11 @@ plt.title("Histogram of Sepal Length (cm)")
 # plt.tile adds a title to the histogram.
 plt.show()
 # plt.show() is required to display the histogram, without this the code will still run but won't display the resulting histogram.
+
+# The prpcess is repeated for the ret of the variables
+# plot feature: Sepal Width (cm)
+plt.hist(sepal_w, bins = 20, edgecolor = 'black')
+plt.xlabel("Sepal Width (cm)")
+plt.ylabel("Frequency")
+plt.title("Histogram of Sepal Width (cm)")
+plt.show()
