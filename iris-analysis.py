@@ -130,3 +130,13 @@ plt.xlabel("Petal Width (cm)")
 plt.ylabel("Frequency")
 plt.title("Histogram of Petal Width vs Frequency (cm)")
 plt.show()
+
+# Task 3: Scatter Plots
+# In order to have scatter plots comparing each pair of variables I will require 6 plots
+# The plots are as follows:
+# 1. Sepal length vs Sepal width
+# 2. Sepal length vs Petal length
+# 3. Sepal length vs Petal width
+# 4. Sepal width vs Petal length
+# 5. Sepal width vs Petal width
+# 6.Petal length vs Petal width
