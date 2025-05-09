@@ -1,3 +1,5 @@
+# Author: Philip Cullen
+
 # This program is designed to analyse the Iris dataset
 # There are three main tasks associated with this program
 # 1. Output a summary of each variable into a single text file
@@ -134,6 +136,46 @@ plt.show()
 
 # The histograms above display the frequency of the variables, hoever we can gleam more information if we look at the breakdown of the variables between each species.
 
+# plot variable: Sepal Length (cm) for each species
+plt.hist(setosa_sepal_l, bins=20, alpha = 0.5, label="Setosa", color="blue", edgecolor='black')
+plt.hist(versicolor_sepal_l, bins=20, alpha = 0.5, label="Versicolor", color="green", edgecolor='black')
+plt.hist(virginica_sepal_l, bins=20, alpha = 0.5, label="Virginica", color="red", edgecolor='black')
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Frequency")
+plt.title("Fig 2.5. Histogram of Sepal Length (cm) by Species")
+plt.legend()
+plt.show()
+
+# plot variable: Sepal Width (cm) for each species
+plt.hist(setosa_sepal_w, bins=20, alpha = 0.5, label="Setosa", color="blue", edgecolor='black')
+plt.hist(versicolor_sepal_w, bins=20, alpha = 0.5, label="Versicolor", color="green", edgecolor='black')
+plt.hist(virginica_sepal_w, bins=20, alpha = 0.5, label="Virginica", color="red", edgecolor='black')
+plt.xlabel("Sepal Width (cm)")
+plt.ylabel("Frequency")
+plt.title("Fig 2.6. Histogram of Sepal Width (cm) by Species")
+plt.legend()
+plt.show()
+
+# plot feature: Petal Length (cm) for each species
+plt.hist(setosa_petal_l, bins=20, alpha = 0.5, label="Setosa", color="blue", edgecolor='black')
+plt.hist(versicolor_petal_l, bins=20, alpha = 0.5, label="Versicolor", color="green", edgecolor='black')
+plt.hist(virginica_petal_l, bins=20, alpha = 0.5, label="Virginica", color="red", edgecolor='black')
+plt.xlabel("Petal Length (cm)")
+plt.ylabel("Frequency")
+plt.title("Fig 2.7. Histogram of Petal Length (cm) by Species")
+plt.legend()
+plt.show()
+
+# plot feature: Petal Width (cm) for each species
+plt.hist(setosa_petal_w, bins=20, alpha = 0.5, label="Setosa", color="blue", edgecolor='black')
+plt.hist(versicolor_petal_w, bins=20, alpha = 0.5, label="Versicolor", color="green", edgecolor='black')
+plt.hist(virginica_petal_w, bins=20, alpha = 0.5, label="Virginica", color="red", edgecolor='black')
+plt.xlabel("Petal Width (cm)")
+plt.ylabel("Frequency")
+plt.title("Fig 2.8. Histogram of Petal Width (cm) by Species")
+plt.legend()
+plt.show()
+
 # Task 3: Scatter Plots
 # In order to have scatter plots comparing each pair of variables I will require 6 plots
 # The plots are as follows:
@@ -146,9 +188,9 @@ plt.show()
 
 # 1. Sepal Length vs Sepal width
 # Creates a scatter plot using the variables provided
-plt.scatter(sepal_l[target==0], sepal_w[target==0], color = 'red', label = target_names[0], alpha = 1)
-plt.scatter(sepal_l[target==1], sepal_w[target==1], color = 'blue', label = target_names[1], alpha = 1)
-plt.scatter(sepal_l[target==2], sepal_w[target==2], color = 'green', label = target_names[2], alpha = 1)
+plt.scatter(sepal_l[target==0], sepal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
+plt.scatter(sepal_l[target==1], sepal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
+plt.scatter(sepal_l[target==2], sepal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
 
 # Add labels and title to the scatter plot
 plt.xlabel('Sepal Length (cm)')
