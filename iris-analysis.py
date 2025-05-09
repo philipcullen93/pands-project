@@ -105,7 +105,7 @@ plt.hist(sepal_l, bins = 20, color = "blue", edgecolor = 'black')
 plt.xlabel("Sepal Length (cm)")
 plt.ylabel("Frequency")
 # plt.xlabel and plt.ylabel add labels to the x and y axes
-plt.title("Histogram of Sepal Length vs Frquency (cm)")
+plt.title("Fig 2.1. Histogram of Sepal Length vs Frquency (cm)")
 # plt.tile adds a title to the histogram.
 plt.show()
 # plt.show() is required to display the histogram, without this the code will still run but won't display the resulting histogram.
@@ -115,23 +115,24 @@ plt.show()
 plt.hist(sepal_w, bins = 20, color = "green", edgecolor = 'black')
 plt.xlabel("Sepal Width (cm)")
 plt.ylabel("Frequency")
-plt.title("Histogram of Sepal Width Vs Frequency (cm)")
+plt.title("Fig 2.2. Histogram of Sepal Width Vs Frequency (cm)")
 plt.show()
 
 # plot feature: Petal Length (cm)
 plt.hist(petal_l, bins = 20, color = "red", edgecolor = 'black')
 plt.xlabel("Petal Length (cm)")
 plt.ylabel("Frequency")
-plt.title("Histogram of Petal Length vs Frequency (cm)")
+plt.title("Fig 2.3. Histogram of Petal Length vs Frequency (cm)")
 plt.show()
 
 # plot feature: Petal Width (cm)
 plt.hist(petal_w, bins = 20, color = "yellow", edgecolor = 'black')
 plt.xlabel("Petal Width (cm)")
 plt.ylabel("Frequency")
-plt.title("Histogram of Petal Width vs Frequency (cm)")
+plt.title("Fig 2.4. Histogram of Petal Width vs Frequency (cm)")
 plt.show()
 
+# The histograms above display the frequency of the variables, hoever we can gleam more information if we look at the breakdown of the variables between each species.
 
 # Task 3: Scatter Plots
 # In order to have scatter plots comparing each pair of variables I will require 6 plots
@@ -152,7 +153,7 @@ plt.scatter(sepal_l[target==2], sepal_w[target==2], color = 'green', label = tar
 # Add labels and title to the scatter plot
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Sepal Width (cm)')
-plt.title('Iris Dataset: Sepal Length vs. Sepal Width')
+plt.title('Fig 3.1. Iris Dataset: Sepal Length vs. Sepal Width')
 # Adds a grid for easier comparison 
 plt.grid(True)
 # shows the legend using the labels provided
