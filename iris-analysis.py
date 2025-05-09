@@ -98,7 +98,7 @@ with open("column_statistics.txt", "w") as f:
 
 # Task 2: Histograms
 # plot feature: Sepal Length (cm)
-plt.hist(sepal_l, bins = 20, edgecolor = 'black')
+plt.hist(sepal_l, bins = 20, color = "blue", edgecolor = 'black')
 # edgecolor = black, helps outline each bar on the histogram
 # bins = 20, put the data into 20 evenly spaced bars. A bins value that is too high or too low can make the data harder to interpret.
 plt.xlabel("Sepal Length (cm)")
@@ -111,21 +111,21 @@ plt.show()
 
 # The prpcess is repeated for the ret of the variables
 # plot feature: Sepal Width (cm)
-plt.hist(sepal_w, bins = 20, edgecolor = 'black')
+plt.hist(sepal_w, bins = 20, color = "green", edgecolor = 'black')
 plt.xlabel("Sepal Width (cm)")
 plt.ylabel("Frequency")
 plt.title("Histogram of Sepal Width Vs Frequency (cm)")
 plt.show()
 
 # plot feature: Petal Length (cm)
-plt.hist(petal_l, bins = 20, edgecolor = 'black')
+plt.hist(petal_l, bins = 20, color = "red", edgecolor = 'black')
 plt.xlabel("Petal Length (cm)")
 plt.ylabel("Frequency")
 plt.title("Histogram of Petal Length vs Frequency (cm)")
 plt.show()
 
 # plot feature: Petal Width (cm)
-plt.hist(petal_w, bins = 20, edgecolor = 'black')
+plt.hist(petal_w, bins = 20, color = "yellow", edgecolor = 'black')
 plt.xlabel("Petal Width (cm)")
 plt.ylabel("Frequency")
 plt.title("Histogram of Petal Width vs Frequency (cm)")
