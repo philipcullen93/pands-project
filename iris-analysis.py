@@ -97,6 +97,7 @@ with open("column_statistics.txt", "w") as f:
         print("", file=f)
 
 # Task 2: Histograms
+
 # plot feature: Sepal Length (cm)
 plt.hist(sepal_l, bins = 20, color = "blue", edgecolor = 'black')
 # edgecolor = black, helps outline each bar on the histogram
@@ -131,6 +132,7 @@ plt.ylabel("Frequency")
 plt.title("Histogram of Petal Width vs Frequency (cm)")
 plt.show()
 
+
 # Task 3: Scatter Plots
 # In order to have scatter plots comparing each pair of variables I will require 6 plots
 # The plots are as follows:
@@ -140,3 +142,20 @@ plt.show()
 # 4. Sepal width vs Petal length
 # 5. Sepal width vs Petal width
 # 6.Petal length vs Petal width
+
+# 1. Sepal Length vs Sepal width
+# Creates a scatter plot using the variables provided
+plt.scatter(sepal_l[target==0], sepal_w[target==0], color = 'red', label = target_names[0], alpha = 1)
+plt.scatter(sepal_l[target==1], sepal_w[target==1], color = 'blue', label = target_names[1], alpha = 1)
+plt.scatter(sepal_l[target==2], sepal_w[target==2], color = 'green', label = target_names[2], alpha = 1)
+
+# Add labels and title to the scatter plot
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Sepal Width (cm)')
+plt.title('Iris Dataset: Sepal Length vs. Sepal Width')
+# Adds a grid for easier comparison 
+plt.grid(True)
+# shows the legend using the labels provided
+plt.legend()
+# Renders and displays the plot
+plt.show()
