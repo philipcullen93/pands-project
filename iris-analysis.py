@@ -184,7 +184,7 @@ plt.show()
 # 3. Sepal length vs Petal width
 # 4. Sepal width vs Petal length
 # 5. Sepal width vs Petal width
-# 6.Petal length vs Petal width
+# 6. Petal length vs Petal width
 
 # 1. Sepal Length vs Sepal width
 # Creates a scatter plot using the variables provided
@@ -201,4 +201,59 @@ plt.grid(True)
 # shows the legend using the labels provided
 plt.legend()
 # Renders and displays the plot
+plt.show()
+
+# 2. Sepal Length vs Petal Length
+plt.scatter(sepal_l[target==0], petal_l[target==0], color = 'blue', label = target_names[0], alpha = 1)
+plt.scatter(sepal_l[target==1], petal_l[target==1], color = 'green', label = target_names[1], alpha = 1)
+plt.scatter(sepal_l[target==2], petal_l[target==2], color = 'red', label = target_names[2], alpha = 1)
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Petal Length (cm)')
+plt.title('Fig 3.2. Iris Dataset: Sepal Length vs. Petal Length')
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# 3. Sepal length vs Petal Width
+plt.scatter(sepal_l[target==0], petal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
+plt.scatter(sepal_l[target==1], petal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
+plt.scatter(sepal_l[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Petal Width (cm)')
+plt.title('Fig 3.3. Iris Dataset: Sepal Length vs. Petal Width')
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# 4. Sepal Width vs Petal Length
+plt.scatter(sepal_w[target==0], petal_l[target==0], color = 'blue', label = target_names[0], alpha = 1)
+plt.scatter(sepal_w[target==1], petal_l[target==1], color = 'green', label = target_names[1], alpha = 1)
+plt.scatter(sepal_w[target==2], petal_l[target==2], color = 'red', label = target_names[2], alpha = 1)
+plt.xlabel('Sepal Width (cm)')
+plt.ylabel('Petal Length (cm)')
+plt.title('Fig 3.4. Iris Dataset: Sepal Width vs. Petal Length')
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# 5. Sepal Width vs Petal Width
+plt.scatter(sepal_w[target==0], petal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
+plt.scatter(sepal_w[target==1], petal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
+plt.scatter(sepal_w[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
+plt.xlabel('Sepal Width (cm)')
+plt.ylabel('Petal Width (cm)')
+plt.title('Fig 3.5. Iris Dataset: Sepal Width vs. Petal Width')
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# 6. Petal Length vs Petal Width
+plt.scatter(petal_l[target==0], petal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
+plt.scatter(petal_l[target==1], petal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
+plt.scatter(petal_l[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
+plt.xlabel('Petal Length (cm)')
+plt.ylabel('Petal Width (cm)')
+plt.title('Fig 3.6. Iris Dataset: Petal Length vs. Petal Width')
+plt.grid(True)
+plt.legend()
 plt.show()
