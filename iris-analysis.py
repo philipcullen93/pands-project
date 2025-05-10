@@ -210,23 +210,28 @@ plt.show()
 os.makedirs("Scatter Plots", exist_ok = True)
 
 # 1. Sepal Length vs Sepal width
-# Creates a scatter plot using the variables provided
-plt.scatter(sepal_l[target==0], sepal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
-plt.scatter(sepal_l[target==1], sepal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
-plt.scatter(sepal_l[target==2], sepal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
-
-# Add labels and title to the scatter plot
+# Linear regression using numpy
+slope, intercept = np.polyfit(sepal_l, sepal_w, 1)
+y_pred = slope * sepal_l + intercept
+r2 = 1 - np.sum((sepal_w - y_pred) ** 2) / np.sum((sepal_w - np.mean(sepal_w)) ** 2)
+# Creating the Scatter Plot
+colors = ['blue', 'green', 'red']
+for i in range(3):
+    plt.scatter(sepal_l[target == i], sepal_w[target == i], color=colors[i], label=target_names[i])
+# Create an array of evenly spaced values between the minimum and maximum values of sepal_l
+x_vals = np.linspace(min(sepal_l), max(sepal_l), 100)
+plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
+# Adding axes labels and scatter plot title
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Sepal Width (cm)')
-plt.title('Fig 3.1. Iris Dataset - Sepal Length vs. Sepal Width')
-
-# Adds a grid for easier comparison 
+plt.title('Iris Dataset - Sepal Length vs. Sepal Width')
+# Displays the R^2 value on the scatter plot with a white background box
+plt.text(min(sepal_l) + 0.5, max(sepal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
+# Displays a grid on the scatter plot
 plt.grid(True)
-# shows the legend using the labels provided
+# Displays a legend showing the what species the colours refer to, the R^2 value, and the Linear Regression Line
 plt.legend()
-# Saves scatter plots in "Scatter Plots" Folder
 plt.savefig("Scatter Plots/Fig 3.1. Iris Dataset - Sepal Length vs. Sepal Width.png", dpi=300)
-# Renders and displays the plot
 plt.show()
 
 # Steps are repeated for the next 5 scatter plots, linear rgeression lines and R^2 calculations, with the required variables for each plot.
