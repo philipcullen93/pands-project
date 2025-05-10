@@ -46,10 +46,22 @@ Fisher's linear discrimiant statistical model served as the foundation for Linea
 - Matplotlib.pyplot
 
 ## How to Run the Program
+To run the program:
+
+1. Download or clone the pands-project.git repository from https://github.com/philipcullen93/pands-project.git
+
+2. In VSCode run the program python.iris-analysis.py
 
 ## How the Program Works
+Below offers a more indepth look at what each task does.
+
 ### Setup
-In the beginning of the code there is an initial setup step. The code provided in this section is used to import the data and any required modules. Furthermore, it isolates several features of the dataset. This allows the data to be more easily manipulated dueing tasks. There is additional code sections that are not required for the program to run successfully but that can be implemented to check to ensure the data being imported is correct and has been successfully imported.
+In the beginning of the code there is an initial setup step. The code provided in this section is used to import the data and any required modules. Furthermore, it isolates several features of the dataset, using variable names. Variable Naming allows the data to be more easily manipulated dueing tasks. There is additional code sections that are not required for the program to run successfully but that can be implemented to check to ensure the data being imported is correct and has been successfully imported.
+
+### Task 1: Variable Summary
+This task requires the program to calculate the Mean, Minimum, Maximum, Standard Deviation, and Median for each variable, and save them in a .txt file. The code for this creates a text file called column_statistics.txt. Using this line of code **for i in range(data.shape[1]):** It loops through each column in the data array and returns the number of columns. Next, using **column = data[:, i]** it utilises NumPy Slicing to extract column i from the data. Finally, **print(f"{column_names[i]}:", file=f)** Writes the name of the current column to the file while file=f sends the output to the file. 
+
+Basically, this script loops through each column in a NumPy dataset, calculates statistics like mean, minimum, maximum, standard deviation, and median, then writes them into .txt file using the open() function.
 
 ## Discussion
 
