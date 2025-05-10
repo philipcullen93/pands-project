@@ -18,6 +18,9 @@ import sklearn as skl
 # numpy is required to analyse the dataset
 import numpy as np
 
+# imports the OS (Operating System) module, this allows python to interact with the operating system
+import os
+
 # matplotlib.pyplot is required to create the histograms and scatter plots
 import matplotlib.pyplot as plt
 
@@ -100,6 +103,9 @@ with open("column_statistics.txt", "w") as f:
 
 # Task 2: Histograms
 
+# creates the folder "Histograms" if it doesn't exist already
+os.makedirs("Histograms", exist_ok = True)
+
 # plot feature: Sepal Length (cm)
 plt.hist(sepal_l, bins = 20, color = "blue", edgecolor = 'black')
 # edgecolor = black, helps outline each bar on the histogram
@@ -109,6 +115,8 @@ plt.ylabel("Frequency")
 # plt.xlabel and plt.ylabel add labels to the x and y axes
 plt.title("Fig 2.1. Histogram of Sepal Length vs Frquency (cm)")
 # plt.tile adds a title to the histogram.
+# Save the histogram into the "Histograms" Folder
+plt.savefig("Histograms/Fig 2.1. Histogram of Sepal Length vs Frquency (cm).png", dpi=300)
 plt.show()
 # plt.show() is required to display the histogram, without this the code will still run but won't display the resulting histogram.
 
@@ -118,6 +126,7 @@ plt.hist(sepal_w, bins = 20, color = "green", edgecolor = 'black')
 plt.xlabel("Sepal Width (cm)")
 plt.ylabel("Frequency")
 plt.title("Fig 2.2. Histogram of Sepal Width Vs Frequency (cm)")
+plt.savefig("Histograms/Fig 2.2. Histogram of Sepal Width Vs Frequency (cm).png", dpi=300)
 plt.show()
 
 # plot feature: Petal Length (cm)
@@ -125,6 +134,7 @@ plt.hist(petal_l, bins = 20, color = "red", edgecolor = 'black')
 plt.xlabel("Petal Length (cm)")
 plt.ylabel("Frequency")
 plt.title("Fig 2.3. Histogram of Petal Length vs Frequency (cm)")
+plt.savefig("Histograms/Fig 2.3. Histogram of Petal Length vs Frequency (cm).png", dpi=300)
 plt.show()
 
 # plot feature: Petal Width (cm)
@@ -132,6 +142,7 @@ plt.hist(petal_w, bins = 20, color = "yellow", edgecolor = 'black')
 plt.xlabel("Petal Width (cm)")
 plt.ylabel("Frequency")
 plt.title("Fig 2.4. Histogram of Petal Width vs Frequency (cm)")
+plt.savefig("Histograms/Fig 2.4. Histogram of Petal Width vs Frequency (cm).png", dpi=300)
 plt.show()
 
 # The histograms above display the frequency of the variables, hoever we can gleam more information if we look at the breakdown of the variables between each species.
@@ -143,6 +154,7 @@ plt.hist(virginica_sepal_l, bins=20, alpha = 0.5, label="Virginica", color="red"
 plt.xlabel("Sepal Length (cm)")
 plt.ylabel("Frequency")
 plt.title("Fig 2.5. Histogram of Sepal Length (cm) by Species")
+plt.savefig("Histograms/Fig 2.5. Histogram of Sepal Length (cm) by Species.png", dpi=300)
 plt.legend()
 plt.show()
 
@@ -153,6 +165,7 @@ plt.hist(virginica_sepal_w, bins=20, alpha = 0.5, label="Virginica", color="red"
 plt.xlabel("Sepal Width (cm)")
 plt.ylabel("Frequency")
 plt.title("Fig 2.6. Histogram of Sepal Width (cm) by Species")
+plt.savefig("Histograms/Fig 2.6. Histogram of Sepal Width (cm) by Species.png", dpi=300)
 plt.legend()
 plt.show()
 
@@ -163,6 +176,7 @@ plt.hist(virginica_petal_l, bins=20, alpha = 0.5, label="Virginica", color="red"
 plt.xlabel("Petal Length (cm)")
 plt.ylabel("Frequency")
 plt.title("Fig 2.7. Histogram of Petal Length (cm) by Species")
+plt.savefig("Histograms/Fig 2.7. Histogram of Petal Length (cm) by Species.png", dpi=300)
 plt.legend()
 plt.show()
 
@@ -173,6 +187,7 @@ plt.hist(virginica_petal_w, bins=20, alpha = 0.5, label="Virginica", color="red"
 plt.xlabel("Petal Width (cm)")
 plt.ylabel("Frequency")
 plt.title("Fig 2.8. Histogram of Petal Width (cm) by Species")
+plt.savefig("Histograms/Fig 2.8. Histogram of Petal Width (cm) by Species.png", dpi=300)
 plt.legend()
 plt.show()
 
@@ -186,6 +201,9 @@ plt.show()
 # 5. Sepal width vs Petal width
 # 6. Petal length vs Petal width
 
+# Additionally, I have decided to add Linear Regression Lines to the scatter plots.
+# This combined with R^2 calculations should provide some insight into the corelation between the variables.
+
 # 1. Sepal Length vs Sepal width
 # Creates a scatter plot using the variables provided
 plt.scatter(sepal_l[target==0], sepal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
@@ -196,12 +214,15 @@ plt.scatter(sepal_l[target==2], sepal_w[target==2], color = 'red', label = targe
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Sepal Width (cm)')
 plt.title('Fig 3.1. Iris Dataset: Sepal Length vs. Sepal Width')
+
 # Adds a grid for easier comparison 
 plt.grid(True)
 # shows the legend using the labels provided
 plt.legend()
 # Renders and displays the plot
 plt.show()
+
+# Steps are repeated for the next 5 scatter plots, linear rgeression lines and R^2 calculations, with the required variables for each plot.
 
 # 2. Sepal Length vs Petal Length
 plt.scatter(sepal_l[target==0], petal_l[target==0], color = 'blue', label = target_names[0], alpha = 1)
