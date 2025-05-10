@@ -4,8 +4,14 @@
 
 ## Contents
 This repository contains:
-This repository contains a project (Investigation of Iris Dataset) for the Programming and Scripting module.
+- python file iris-analysis.py
+- README.md
+- Histograms Folder
+- Scatter Plot Folder
+- column_statistics.txt
+- .gitignore
 
+## Table of Contents:
 This README.md contains:
 - Project Title
 - Project Overview
