@@ -121,7 +121,7 @@ Histogram Fig 2.1. Sepal Length vs Frequency
   - This will display the histogram in the Python environment.
   - However, if this line of code is left out the histogram will still save to the Histogram folder.
  
-  For the second set of histograms where it displays the breakdown of variables between the different species the code changes slightly.
+For the second set of histograms where it displays the breakdown of variables between the different species the code changes slightly.
 
 1. Plotting the Histogram for Species Variable Breakdown
 - plt.hist(setosa_sepal_l, bins=20, alpha = 0.5, label="Setosa", color="blue", edgecolor='black')
