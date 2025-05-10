@@ -59,9 +59,29 @@ Below offers a more indepth look at what each task does.
 In the beginning of the code there is an initial setup step. The code provided in this section is used to import the data and any required modules. Furthermore, it isolates several features of the dataset, using variable names. Variable Naming allows the data to be more easily manipulated dueing tasks. There is additional code sections that are not required for the program to run successfully but that can be implemented to check to ensure the data being imported is correct and has been successfully imported.
 
 ### Task 1: Variable Summary
-This task requires the program to calculate the Mean, Minimum, Maximum, Standard Deviation, and Median for each variable, and save them in a .txt file. The code for this creates a text file called column_statistics.txt. Using this line of code **for i in range(data.shape[1]):** It loops through each column in the data array and returns the number of columns. Next, using **column = data[:, i]** it utilises NumPy Slicing to extract column i from the data. Finally, **print(f"{column_names[i]}:", file=f)** Writes the name of the current column to the file while file=f sends the output to the file. 
+This task uses the program to calculate key statistics of the variables — Mean, Minimum, Maximum, Standard Deviation, and Median — and save the results in a .txt file called "column_ststistics".
 
-Basically, this script loops through each column in a NumPy dataset, calculates statistics like mean, minimum, maximum, standard deviation, and median, then writes them into .txt file using the open() function.
+In order to do this effectively, the code needs to run through 4 important steps:
+1. Looping Through Each Column
+- for i in range(data.shape[1]):
+  - Loops through each column in the NumPy data.
+  - data.shape[1] returns the total number of columns.
+
+2. Extracting the Data in Each Column Using NumPy Slicing
+- column = data[:, i]
+  - Uses NumPy slicing to extract column i from data.
+  - : means "all rows", so data[:, i] means "column i of all rows"
+
+3. Writing the Results into the .txt file.
+- print(f"{column_names[i]}:", file=f)
+  - Writes the name of the current column to the file.
+  - file=f makes sure the output from the script is written into the .txt file and not the VSCode terminal.
+
+4. Calculating the Statisitcs
+- print("Mean:", float(np.mean(column)), file=f)
+  - Uses the NumPy mean function to calculate the mean of each column
+  - Adds the result to the column_statistics.txt file
+  - This is repeated using the minimum, maximum, standard deviation, and median Numpy functions.
 
 ## Discussion
 
