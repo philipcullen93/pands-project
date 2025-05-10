@@ -191,6 +191,8 @@ plt.savefig("Histograms/Fig 2.8. Histogram of Petal Width (cm) by Species.png", 
 plt.legend()
 plt.show()
 
+# The reason for saving the Histograms is that it allows easier access when trying to compare them as I don't have to run the code again or manually save them.
+
 # Task 3: Scatter Plots
 # In order to have scatter plots comparing each pair of variables I will require 6 plots
 # The plots are as follows:
@@ -204,6 +206,9 @@ plt.show()
 # Additionally, I have decided to add Linear Regression Lines to the scatter plots.
 # This combined with R^2 calculations should provide some insight into the corelation between the variables.
 
+# creates the folder "Scatter Plots" if it doesn't exist already
+os.makedirs("Scatter Plots", exist_ok = True)
+
 # 1. Sepal Length vs Sepal width
 # Creates a scatter plot using the variables provided
 plt.scatter(sepal_l[target==0], sepal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
@@ -213,12 +218,14 @@ plt.scatter(sepal_l[target==2], sepal_w[target==2], color = 'red', label = targe
 # Add labels and title to the scatter plot
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Sepal Width (cm)')
-plt.title('Fig 3.1. Iris Dataset: Sepal Length vs. Sepal Width')
+plt.title('Fig 3.1. Iris Dataset - Sepal Length vs. Sepal Width')
 
 # Adds a grid for easier comparison 
 plt.grid(True)
 # shows the legend using the labels provided
 plt.legend()
+# Saves scatter plots in "Scatter Plots" Folder
+plt.savefig("Scatter Plots/Fig 3.1. Iris Dataset - Sepal Length vs. Sepal Width.png", dpi=300)
 # Renders and displays the plot
 plt.show()
 
@@ -230,9 +237,10 @@ plt.scatter(sepal_l[target==1], petal_l[target==1], color = 'green', label = tar
 plt.scatter(sepal_l[target==2], petal_l[target==2], color = 'red', label = target_names[2], alpha = 1)
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Petal Length (cm)')
-plt.title('Fig 3.2. Iris Dataset: Sepal Length vs. Petal Length')
+plt.title('Fig 3.2. Iris Dataset - Sepal Length vs. Petal Length')
 plt.grid(True)
 plt.legend()
+plt.savefig("Scatter Plots/Fig 3.2. Iris Dataset - Sepal Length vs. Petal Length.png", dpi=300)
 plt.show()
 
 # 3. Sepal length vs Petal Width
@@ -241,9 +249,10 @@ plt.scatter(sepal_l[target==1], petal_w[target==1], color = 'green', label = tar
 plt.scatter(sepal_l[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Petal Width (cm)')
-plt.title('Fig 3.3. Iris Dataset: Sepal Length vs. Petal Width')
+plt.title('Fig 3.3. Iris Dataset - Sepal Length vs. Petal Width')
 plt.grid(True)
 plt.legend()
+plt.savefig("Scatter Plots/Fig 3.3. Iris Dataset - Sepal Length vs. Petal Width.png", dpi=300)
 plt.show()
 
 # 4. Sepal Width vs Petal Length
@@ -252,9 +261,10 @@ plt.scatter(sepal_w[target==1], petal_l[target==1], color = 'green', label = tar
 plt.scatter(sepal_w[target==2], petal_l[target==2], color = 'red', label = target_names[2], alpha = 1)
 plt.xlabel('Sepal Width (cm)')
 plt.ylabel('Petal Length (cm)')
-plt.title('Fig 3.4. Iris Dataset: Sepal Width vs. Petal Length')
+plt.title('Fig 3.4. Iris Dataset - Sepal Width vs. Petal Length')
 plt.grid(True)
 plt.legend()
+plt.savefig("Scatter Plots/Fig 3.4. Iris Dataset - Sepal Width vs. Petal Length.png", dpi=300)
 plt.show()
 
 # 5. Sepal Width vs Petal Width
@@ -263,9 +273,10 @@ plt.scatter(sepal_w[target==1], petal_w[target==1], color = 'green', label = tar
 plt.scatter(sepal_w[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
 plt.xlabel('Sepal Width (cm)')
 plt.ylabel('Petal Width (cm)')
-plt.title('Fig 3.5. Iris Dataset: Sepal Width vs. Petal Width')
+plt.title('Fig 3.5. Iris Dataset - Sepal Width vs. Petal Width')
 plt.grid(True)
 plt.legend()
+plt.savefig("Scatter Plots/Fig 3.5. Iris Dataset - Sepal Width vs. Petal Width.png", dpi=300)
 plt.show()
 
 # 6. Petal Length vs Petal Width
@@ -274,7 +285,10 @@ plt.scatter(petal_l[target==1], petal_w[target==1], color = 'green', label = tar
 plt.scatter(petal_l[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
 plt.xlabel('Petal Length (cm)')
 plt.ylabel('Petal Width (cm)')
-plt.title('Fig 3.6. Iris Dataset: Petal Length vs. Petal Width')
+plt.title('Fig 3.6. Iris Dataset - Petal Length vs. Petal Width')
 plt.grid(True)
 plt.legend()
+plt.savefig("Scatter Plots/Fig 3.6. Iris Dataset - Petal Length vs. Petal Width.png", dpi=300)
 plt.show()
+
+# The reason for saving the scatter plots is that it allows easier access when trying to compare them.
