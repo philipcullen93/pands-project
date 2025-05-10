@@ -120,6 +120,18 @@ Histogram Fig 2.1. Sepal Length vs Frequency
   - Displays the histogram
   - This will display the histogram in the Python environment.
   - However, if this line of code is left out the histogram will still save to the Histogram folder.
+ 
+  For the second set of histograms where it displays the breakdown of variables between the different species the code changes slightly.
+
+1. Plotting the Histogram for Species Variable Breakdown
+- plt.hist(setosa_sepal_l, bins=20, alpha = 0.5, label="Setosa", color="blue", edgecolor='black')
+- plt.hist(versicolor_sepal_l, bins=20, alpha = 0.5, label="Versicolor", color="green", edgecolor='black')
+- plt.hist(virginica_sepal_l, bins=20, alpha = 0.5, label="Virginica", color="red", edgecolor='black')
+  - bins=20: Divides the data into 20 intervals (bars).
+  - alpha=0.5: Makes the bars 50% transparent, this is important as it make overlapping areas are visible.
+  - label="Setosa": Adds a legend entry for this dataset. The same is done for Veriscolor and Virginica.
+  - color="blue": Fills the bars with blue. For Veriscolor blue is changed to "green", and for Virginica blue is changed to "red".
+  - edgecolor='black': Outlines each bar in black.
 
 ## Discussion
 
