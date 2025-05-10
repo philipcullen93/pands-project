@@ -83,6 +83,44 @@ In order to do this effectively, the code needs to run through 4 important steps
   - Adds the result to the column_statistics.txt file
   - This is repeated using the minimum, maximum, standard deviation, and median Numpy functions.
 
+### Task 2: Histograms of Variables
+This task uses the program to create 4 histograms showing the frequency of variables, it then creates 4 more histograms showing the breakdown of the variables between iris species.
+
+The program also creates a folder called "Histograms", if one doesn't already exist, and populates it with the Histograms produced by the script.
+
+Below is how the script works for one of the Histograms (Fig 2.1. Sepal Length (cm) vs Frequency). For the other the code remains realtively the same.
+
+Histogram Fig 2.1. Sepal Length vs Frequency
+1. Create the "Histograms" folder.
+- os.makedirs("Histograms", exist_ok=True)
+  - Creates a folder named Histograms if it doesn't already exist.
+  - If one exists the script will not create a second.
+
+2. Plot the Histogram
+- plt.hist(sepal_l, bins = 20, color = "blue", edgecolor = "black")
+  - Plots the histogram for the variable sepal_l (Sepal Length).
+  - bins = 20: Divides the data into 20 even spaces
+  - color="blue": Sets the bar color. Without this, the colour defaults to blue.
+    - More important for the other histograms, that other colours are selected as to help differentiate between them.
+  - edgecolor="black": Outlines each bar to make them visually distinct, and easier to read data.
+ 
+  3. Add Axis Labels and Title
+- plt.xlabel("Sepal Length (cm)")
+- plt.ylabel("Frequency")
+- plt.title("Fig 2.1. Histogram of Sepal Length vs Frquency (cm)")
+  - Adds an x-axis label, y-axis label, and title to the histogram.
+
+4. Save the Histogram
+- plt.savefig("Histograms/Fig 2.1. Histogram of Sepal Length vs Frquency (cm).png", dpi=300)
+  - Saves the resulting histogram in the Histograms folder as a .png file.
+  - dpi = 300 ensures the output is in a high resolution.
+ 
+5. Display the Histogram
+- plt.show()
+  - Displays the histogram
+  - This will display the histogram in the Python environment.
+  - However, if this line of code is left out the histogram will still save to the Histogram folder.
+
 ## Discussion
 
 ## References
