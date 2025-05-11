@@ -132,7 +132,27 @@ For the second set of histograms where it displays the breakdown of variables be
   - label="Setosa": Adds a legend entry for this dataset. The same is done for Veriscolor and Virginica.
   - color="blue": Fills the bars with blue. For Veriscolor blue is changed to "green", and for Virginica blue is changed to "red".
   - edgecolor='black': Outlines each bar in black.
- 
+
+### Task 3: Scatter Plots
+
+As with Task 2: Histograms, provided below is the script for generating one of the Scatter Plots, performing the R^2 calculation and adding the Linear Regression Line, in this case Fig 3.1. Iris Dataset - Sepal Length vs. Sepal Width. 
+
+The other scatter plots and calculations aare done in the same manner, just changing the variables.
+
+- slope, intercept = np.polyfit(sepal_l, sepal_w, 1)
+- y_pred = slope * sepal_l + intercept
+- r2 = 1 - np.sum((sepal_w - y_pred) ** 2) / np.sum((sepal_w - np.mean(sepal_w)) ** 2)
+- colors = ['blue', 'green', 'red']
+  for i in range(3):
+  plt.scatter(sepal_l[target == i], sepal_w[target == i], color=colors[i], label=target_names[i])
+- x_vals = np.linspace(min(sepal_l), max(sepal_l), 100)
+  plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
+- plt.text(min(sepal_l) + 0.5, max(sepal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
+
+
+
+
+
 ### Additional Analysis: Heatmap
 This script creates a heatmap using the correlation matrix between the values.
 
