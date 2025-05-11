@@ -224,7 +224,7 @@ plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
 # Adding axes labels and scatter plot title
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Sepal Width (cm)')
-plt.title('Iris Dataset - Sepal Length vs. Sepal Width')
+plt.title('Fig 3.1 Iris Dataset - Sepal Length vs. Sepal Width')
 # Displays the R^2 value on the scatter plot with a white background box
 plt.text(min(sepal_l) + 0.5, max(sepal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
 # Displays a grid on the scatter plot
@@ -237,60 +237,90 @@ plt.show()
 # Steps are repeated for the next 5 scatter plots, linear rgeression lines and R^2 calculations, with the required variables for each plot.
 
 # 2. Sepal Length vs Petal Length
-plt.scatter(sepal_l[target==0], petal_l[target==0], color = 'blue', label = target_names[0], alpha = 1)
-plt.scatter(sepal_l[target==1], petal_l[target==1], color = 'green', label = target_names[1], alpha = 1)
-plt.scatter(sepal_l[target==2], petal_l[target==2], color = 'red', label = target_names[2], alpha = 1)
+slope, intercept = np.polyfit(sepal_l, petal_l, 1)
+y_pred = slope * sepal_l + intercept
+r2 = 1 - np.sum((petal_l - y_pred) ** 2) / np.sum((petal_l - np.mean(petal_l)) ** 2)
+colors = ['blue', 'green', 'red']
+for i in range(3):
+    plt.scatter(sepal_l[target == i], petal_l[target == i], color=colors[i], label=target_names[i])
+x_vals = np.linspace(min(sepal_l), max(sepal_l), 100)
+plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Petal Length (cm)')
-plt.title('Fig 3.2. Iris Dataset - Sepal Length vs. Petal Length')
+plt.title('Fig 3.2 Iris Dataset - Sepal Length vs. Petal Length')
+plt.text(min(sepal_l) + 0.5, max(petal_l) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
 plt.grid(True)
 plt.legend()
 plt.savefig("Scatter Plots/Fig 3.2. Iris Dataset - Sepal Length vs. Petal Length.png", dpi=300)
 plt.show()
 
 # 3. Sepal length vs Petal Width
-plt.scatter(sepal_l[target==0], petal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
-plt.scatter(sepal_l[target==1], petal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
-plt.scatter(sepal_l[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
+slope, intercept = np.polyfit(sepal_l, petal_w, 1)
+y_pred = slope * sepal_l + intercept
+r2 = 1 - np.sum((petal_w - y_pred) ** 2) / np.sum((petal_w - np.mean(petal_w)) ** 2)
+colors = ['blue', 'green', 'red']
+for i in range(3):
+    plt.scatter(sepal_l[target == i], petal_w[target == i], color=colors[i], label=target_names[i])
+x_vals = np.linspace(min(sepal_l), max(sepal_l), 100)
+plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Petal Width (cm)')
-plt.title('Fig 3.3. Iris Dataset - Sepal Length vs. Petal Width')
+plt.title('Fig 3.3 Iris Dataset - Sepal Length vs. Petal Width')
+plt.text(min(sepal_l) + 0.5, max(petal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
 plt.grid(True)
 plt.legend()
 plt.savefig("Scatter Plots/Fig 3.3. Iris Dataset - Sepal Length vs. Petal Width.png", dpi=300)
 plt.show()
 
 # 4. Sepal Width vs Petal Length
-plt.scatter(sepal_w[target==0], petal_l[target==0], color = 'blue', label = target_names[0], alpha = 1)
-plt.scatter(sepal_w[target==1], petal_l[target==1], color = 'green', label = target_names[1], alpha = 1)
-plt.scatter(sepal_w[target==2], petal_l[target==2], color = 'red', label = target_names[2], alpha = 1)
+slope, intercept = np.polyfit(sepal_w, petal_l, 1)
+y_pred = slope * sepal_w + intercept
+r2 = 1 - np.sum((petal_l - y_pred) ** 2) / np.sum((petal_l - np.mean(petal_l)) ** 2)
+colors = ['blue', 'green', 'red']
+for i in range(3):
+    plt.scatter(sepal_w[target == i], petal_l[target == i], color=colors[i], label=target_names[i])
+x_vals = np.linspace(min(sepal_w), max(sepal_w), 100)
+plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
 plt.xlabel('Sepal Width (cm)')
 plt.ylabel('Petal Length (cm)')
-plt.title('Fig 3.4. Iris Dataset - Sepal Width vs. Petal Length')
+plt.title('Fig 3.4 Iris Dataset - Sepal Width vs. Petal Length')
+plt.text(min(sepal_w) + 0.5, max(petal_l) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
 plt.grid(True)
 plt.legend()
 plt.savefig("Scatter Plots/Fig 3.4. Iris Dataset - Sepal Width vs. Petal Length.png", dpi=300)
 plt.show()
 
 # 5. Sepal Width vs Petal Width
-plt.scatter(sepal_w[target==0], petal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
-plt.scatter(sepal_w[target==1], petal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
-plt.scatter(sepal_w[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
+slope, intercept = np.polyfit(sepal_w, petal_w, 1)
+y_pred = slope * sepal_w + intercept
+r2 = 1 - np.sum((petal_w - y_pred) ** 2) / np.sum((petal_w - np.mean(petal_w)) ** 2)
+colors = ['blue', 'green', 'red']
+for i in range(3):
+    plt.scatter(sepal_w[target == i], petal_w[target == i], color=colors[i], label=target_names[i])
+x_vals = np.linspace(min(sepal_w), max(sepal_w), 100)
+plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
 plt.xlabel('Sepal Width (cm)')
 plt.ylabel('Petal Width (cm)')
-plt.title('Fig 3.5. Iris Dataset - Sepal Width vs. Petal Width')
+plt.title('Fig 3.5 Iris Dataset - Sepal Width vs. Petal Width')
+plt.text(min(sepal_w) + 0.5, max(petal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
 plt.grid(True)
 plt.legend()
 plt.savefig("Scatter Plots/Fig 3.5. Iris Dataset - Sepal Width vs. Petal Width.png", dpi=300)
 plt.show()
 
 # 6. Petal Length vs Petal Width
-plt.scatter(petal_l[target==0], petal_w[target==0], color = 'blue', label = target_names[0], alpha = 1)
-plt.scatter(petal_l[target==1], petal_w[target==1], color = 'green', label = target_names[1], alpha = 1)
-plt.scatter(petal_l[target==2], petal_w[target==2], color = 'red', label = target_names[2], alpha = 1)
+slope, intercept = np.polyfit(petal_l, petal_w, 1)
+y_pred = slope * petal_l + intercept
+r2 = 1 - np.sum((petal_w - y_pred) ** 2) / np.sum((petal_w - np.mean(petal_w)) ** 2)
+colors = ['blue', 'green', 'red']
+for i in range(3):
+    plt.scatter(petal_l[target == i], petal_w[target == i], color=colors[i], label=target_names[i])
+x_vals = np.linspace(min(petal_l), max(petal_l), 100)
+plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
 plt.xlabel('Petal Length (cm)')
 plt.ylabel('Petal Width (cm)')
-plt.title('Fig 3.6. Iris Dataset - Petal Length vs. Petal Width')
+plt.title('Fig 3.6 Iris Dataset - Petal Length vs. Petal Width')
+plt.text(min(petal_l) + 0.5, max(petal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
 plt.grid(True)
 plt.legend()
 plt.savefig("Scatter Plots/Fig 3.6. Iris Dataset - Petal Length vs. Petal Width.png", dpi=300)
