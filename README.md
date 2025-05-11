@@ -140,18 +140,26 @@ As with Task 2: Histograms, provided below is the script for generating one of t
 The other scatter plots and calculations aare done in the same manner, just changing the variables.
 
 - slope, intercept = np.polyfit(sepal_l, sepal_w, 1)
+  - Performs a 1st-degree polynomial fit to sepal_l (x-values) and sepal_w (y-values).
+      - 1st-degree polynomial is a function in the form: y = mx + b (line equation)
+  - Returns the slope and intercept of the best-fit line.
 - y_pred = slope * sepal_l + intercept
+  - Calculates predicted y-values (Sepal Width) using the line equation.
 - r2 = 1 - np.sum((sepal_w - y_pred) ** 2) / np.sum((sepal_w - np.mean(sepal_w)) ** 2)
+  - Calculates R^2 (coefficient of determination) 
 - colors = ['blue', 'green', 'red']
-  for i in range(3):
-  plt.scatter(sepal_l[target == i], sepal_w[target == i], color=colors[i], label=target_names[i])
+- for i in range(3):
+- plt.scatter(sepal_l[target == i], sepal_w[target == i], color=colors[i], label=target_names[i])
+  - Loops through the 3 species and plots each group using a different color (blue, green, red) stated above.
+  - target == i filters the data to only that species.
+  - label=target_names[i] sets the names in the legend.
 - x_vals = np.linspace(min(sepal_l), max(sepal_l), 100)
-  plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
+  - Creates a smooth line using 100 x-values. Ensures even spacing.
+  - Plots the regression line in black with a label for the legend.
+- plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
+  - Plots the regression line in black and provides the label used in the legend.
 - plt.text(min(sepal_l) + 0.5, max(sepal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
-
-
-
-
+  - Displays the R^2 value on the scatter plot.
 
 ### Additional Analysis: Heatmap
 This script creates a heatmap using the correlation matrix between the values.
