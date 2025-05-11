@@ -24,10 +24,11 @@ import os
 # matplotlib.pyplot is required to create the histograms and scatter plots
 import matplotlib.pyplot as plt
 
+# imports pandas module used to create a Pandas Dataframe for additional analysis
+import pandas as pd
+
 # From sklearn I sppecifically need the datasets module
 from sklearn import datasets
-
-import pandas as pd
 
 # Importing the Iris datset
 iris = datasets.load_iris()
