@@ -349,5 +349,5 @@ plt.yticks(range(len(corr.columns)), corr.columns)
 plt.tight_layout()
 # Add information to the heatmap
 plt.title('Fig 4.1 Variable Correlation Heatmap - Iris Dataset')
-plt.savefig("Additional Analysis/Fig 4.1 Variable Correlation Heatmap - Iris Dataset.png", dpi = 200)
+plt.savefig("Additional Analysis/Fig 4.1 Variable Correlation Heatmap - Iris Dataset.png", dpi = 300)
 plt.show()
