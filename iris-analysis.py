@@ -331,6 +331,9 @@ plt.show()
 # The reason for saving the scatter plots is that it allows easier access when trying to compare them.
 
 # Additional Analysis: Heatmap
+# Creates a folder called "Additional Analysis" if one doesn't already exist
+os.makedirs("Additional Analysis", exist_ok = True)
+
 # Create a DataFrame of the Iris Dataset using Pandas.
 df_iris = pd.DataFrame(iris.data, columns=iris.feature_names)
 # Computes the corealation between the variables and displays the result
@@ -344,6 +347,6 @@ plt.xticks(range(len(corr.columns)), corr.columns, rotation=45)
 plt.yticks(range(len(corr.columns)), corr.columns)
 # Add information to the heatmap
 plt.title('Fig 4.1 Variable Correlation Heatmap - Iris Dataset')
-plt.savefig("Fig 4.1 Variable Correlation Heatmap - Iris Dataset.png", dpi = 300)
+plt.savefig("Additional Analysis/Fig 4.1 Variable Correlation Heatmap - Iris Dataset.png", dpi = 200)
 plt.tight_layout()
 plt.show()
