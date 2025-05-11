@@ -8,6 +8,7 @@ This repository contains:
 - README.md
 - Histograms Folder
 - Scatter Plot Folder
+- Additional Analysis Folder
 - column_statistics.txt
 - .gitignore
 
@@ -19,7 +20,7 @@ This README.md contains:
 - The Modules Required for the Program
 - Information on How to Run the Program
 - Information on How the Program Works
-- A Discussion
+- Discussion
 - References
 
 ## Project Overview
@@ -44,6 +45,8 @@ Fisher's linear discrimiant statistical model served as the foundation for Linea
 - sklearn
 - NumPy
 - Matplotlib.pyplot
+- OS
+- Pandas
 
 ## How to Run the Program
 To run the program:
@@ -192,8 +195,8 @@ From the variable summary there is some information we can learn about the Iris 
 
 - Petal features (length and width) vary more across the dataset than sepal features, this makes them more useful for distinguishing between the three species of Iris.
   - This is due to them having high variability and broad range.
-  - Petal length in particular has widest range and highest variability, this suggests it could be a strong candidate for separating species, particularly Setosa vs. Virginica Iris Species.
-- Sepal Width on the otherhand has the lowest standard deviation. This makes it a very consistent variable and thus may be a poor candidate for separating species.
+  - Petal length in particular has widest range and highest variability, this suggests it could be a strong candidate for separating species, particularly Setosa vs. Virginica Iris species.
+- Sepal Width on the otherhand has the lowest standard deviation. This makes it a very consistent variable and thus may be a poor candidate for identifying individual Iris species.
 
 ### Task 2: Histograms
 The Histograms can help support the observations seen when looking at the variable summary.
@@ -201,11 +204,11 @@ The Histograms can help support the observations seen when looking at the variab
 Below are the observation made by looking at the histograms plotting each variable against the frequency.
 
 - Fig 2.1. Sepal length varies in frequency over the range. This indicates a good variability between species.
-- Fig 2.2. Sepal Width is more clustered. Since it is more clustered, there is less variation, further supporting the idea that it may not be ideal when trying to distinguish between species.
-- Fig 2.3. When looking at the Histogram for Petal Length, there is a sharp peak around 1.5 cm, this suggests that it may belong to a single species, while the other range (4 cm - 6 cm) represent the other two species. This provides more insight as to the idea that petal length may be a good variable to distinguish between species.
+- Fig 2.2. Sepal Width is more clustered. Since it is more clustered, there is less variation, further supporting the idea that it may not be ideal when trying to effectively classify species.
+- Fig 2.3. When looking at the Histogram for Petal Length, there is a sharp peak around 1.5 cm, this suggests that it may belong to a single species, while the other range (4 cm - 6 cm) represent the other two species. This provides more insight as to the idea that petal length may be a good variable to differeniate species from one another.
 - Fig 2.4. As with Petal Length, Petal Width also has a sharp peak (approx 0.25 cm - 0.75 cm , likely belonging to a single Iris species. This suggests it may also be useful when trying to distinguish between species.
 
-From the first 4 Histogras displaying each variable against frequency. We have more evidence backing up the information provided in Task 1: Variable Summary. At this point Petal Length and Petal Width are strong candidates when determining the Iris Species. 
+From the first 4 Histogras displaying each variable against frequency. We have more evidence backing up the information provided in Task 1: Variable Summary. At this point Petal Length and Petal Width are strong candidates to identify the Iris Species. 
 
 By breaking it down further and plotting each variable on the histograms by species, we can find more evidence to backup our earlier observations.
 
@@ -214,7 +217,7 @@ By breaking it down further and plotting each variable on the histograms by spec
 - Fig 2.7. Petal Length shows a lot less overlap between species, particularly for Setosa where it has no overlap with other species. Furthermore, the is significantly less overlap between Veriscolor (green) and Virginica. This reinforces the idea that Petal Length is the best candidate for distinguishing between Iris species.
 - Fig 2.8. As with Fig 2.7., we can clearly see there is significantly less overlap. The three species bers are clearly represented and separated. Thus, Petal Width is a good candidate for separating the Iris species.
 
-The above observations suggest that using the Petal Length and Petal Width we can easily distinguish between the Iris species. 
+The above observations suggest that using the Petal Length and Petal Width we can easily classify the Iris species. 
 
 While Sepal Length and Sepal Width remain poor candidates, it is possible that graphing them against Petal Length and Petal Width could make them more useful for classification.
 
