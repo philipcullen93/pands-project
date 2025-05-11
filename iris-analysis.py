@@ -340,7 +340,7 @@ df_iris = pd.DataFrame(iris.data, columns=iris.feature_names)
 # Computes the corealation between the variables and displays the result
 corr = df_iris.corr()
 # Create the heatmap
-plt.figure()
+plt.figure(figsize=(10, 8))
 plt.imshow(corr, cmap='coolwarm', interpolation='nearest')
 plt.colorbar()
 # Set tick marks and labels
