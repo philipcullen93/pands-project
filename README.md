@@ -36,10 +36,10 @@ The program title is analysis.py and should do the following:
 Additonally, other analysis techniques may be used to further analyse the data.
 
 ## Summary of Paper
-The data for this project original comes from "The Use of Multiple Measuremanets in Taxonomic Problems" by R. A. Fisher. The paper written in 1936, serves as a foundation for multivariate statisitcs. In the paper, Fisher took measurements of three different varients of the Iris flower. The Iris flowers used in the study were  *Iris setosa*, *Iris versicolor*, and *Iris virginica*. For each flower he measured the petal length (cm), petal width (cm), sepal length (cm), and the sepal width (cm). from this Fisher developed a statiscal method, linear discriminant. This method is used to identify a clear combination of features for two or more objects while being able to discriminate between them.
+The data for this project original comes from "The Use of Multiple Measuremanets in Taxonomic Problems" by R. A. Fisher. The paper written in 1936, serves as a foundation for multivariate statisitcs. In the paper, Fisher took measurements of three different varients of the Iris flower. The Iris flowers used in the study were  *Iris setosa*, *Iris versicolor*, and *Iris virginica*. For each flower he measured the petal length (cm), petal width (cm), sepal length (cm), and the sepal width (cm). from this Fisher developed a statiscal method, linear discriminant. This method is used to identify a clear combination of features for two or more objects while being able to discriminate between them [1].
 
 ### Why is this important in data analytics
-Fisher's linear discrimiant statistical model served as the foundation for Linear Disciminant Analysis (LDA), also known as normal discriminant analysis (NDA) or discriminant function analysis (DFA). This model is used in machine learning, bioinformatics, and pattern recognicition. This allows analysts to take large complex datasets and simplify them while still preserving each classes unique information. By doing this it allows for better visualisation and interpretation of highly complex datsets.
+Fisher's linear discrimiant statistical model served as the foundation for Linear Disciminant Analysis (LDA), also known as normal discriminant analysis (NDA) or discriminant function analysis (DFA). This model is used in machine learning, bioinformatics, and pattern recognicition. This allows analysts to take large complex datasets and simplify them while still preserving each classes unique information. By doing this it allows for better visualisation and interpretation of highly complex datsets [2].
 
 ## Required Modules
 - sklearn
@@ -237,4 +237,69 @@ All scatter splots with their associate data and Figure number (Fig X.X.) can be
 - Fig 3.5. Sepal Width vs Petal Width: Similarly to Fig 3.4. there is an extreme amount of scattering of the data points. It has a lower R^2 value of 0.13, this shows an even weaker relationship between the two variables. Therefore, Sepal Width is not a good indicator of Petal Length. Additionally, due to the large degree of scattering, the physical differences of the flowers are not expressed through the relationship of these values. 
 - Fig 3.6. Petal Length vs Petal Width: This plot displays a high degree of clustering of the data points. Each set of data points is grouped tightly together with a small degree of overlap. The R^2 value of 0.93, suggests a storng linear relationship between these two variables. Thus, we can see that Petal Length is a good predictor of Petal Width. From a pysical classification standpoint, it shows that Setosa has small short petals, Verisicolor has moderately sized petals, and Virginica has wide long petals. This provides evidence that Petal Length and Width can be used to classify the individual Iris species. It further supports the data seen in Task 1: Variable Summary and Task 2: Histograms.
 
+### Additional Analysis: Heatmap
+
+The heatmap can be found in the Additional Analysis folder.
+
+The heatmap allows us to make several obervations:
+- There is a strong positive correlation between petal length and petal width, seen previoisly in other tasks.
+- There is a strong positive correlation between sepal length and both petal length, and petal width.
+- A negative correlation between sepal width and the other features of the dataset.
+- Interestingly, sepal length has a positive correlation with petal length and width.
+
+From these observations we can make several conclusions:
+- Petal length and width are highly informative and strongly related to each other.
+- Sepal length correlates with both petal length and width, suggesting sepal length can be used to help distinguish the species when observed with petal length and width.
+- Sepal width behaves differently from the other features and therefore is less useful for distinguishing between iris species on its own.
+- It further provides support for the observation that petal length and petal width may be used as the primary features for classification of species.
+- 
 ## References
+1. Source of the Paper "The Use of Multiple Measuremanets in Taxonomic Problems" by R. A. Fisher: https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x
+
+2. Linear Discrimination Analysis: https://www.ibm.com/think/topics/linear-discriminant-analysis#:~:text=Linear%20discriminant%20analysis%20(LDA)%20is,helps%20optimize%20machine%20learning%20models.
+
+3. Loading the Iris Dataset: https://scikit-learn.org/stable/datasets/toy_dataset.html
+
+4. Importing Packages and Modules: https://docs.python.org/3/tutorial/modules.html
+
+5. Creating Python Variables: https://www.w3schools.com/python/python_variables.asp
+
+6. Numpy Array Creation: https://numpy.org/doc/stable/user/basics.creation.html
+
+7. Reading and Writing Files in Python: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+  
+8. Python for Loops: https://www.w3schools.com/python/python_for_loops.asp
+
+9. Numpy Mean: https://docs.vultr.com/python/third-party/numpy/mean
+
+10. Numpy Minimum: https://docs.vultr.com/python/third-party/numpy/minimum
+
+11. Numpy Maximum: https://docs.vultr.com/python/third-party/numpy/maximum
+
+12. Numpy Standard Deviation: https://docs.vultr.com/python/third-party/numpy/std
+
+13. Numpy Median: https://docs.vultr.com/python/third-party/numpy/median
+
+14. Making a Directory/Folder in Python: https://docs.python.org/3/library/os.html#os.makedirs
+
+15. Plotting Histograms using Matplotlib.pyplot: https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/
+
+16. Saving an Image as a .png file: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html
+
+17. Saving a file in a Folder in Python: https://stackoverflow.com/questions/55400992/create-a-folder-in-the-directory-and-save-files-in-the-new-folder
+
+18. Using Matplotlib.pyplot to Create Scatter Plots: https://www.w3schools.com/python/matplotlib_scatter.asp
+
+19. Using NumPy.polyfit: https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html
+
+20. Adding a Linear Regression Line using numpy.polyfit: https://data36.com/linear-regression-in-python-numpy-polyfit/
+
+21. Adding a Linear Regression Line to a Scatter plot: https://www.statology.org/scatterplot-with-regression-line-python/
+
+22. Calculating R^2 using NumPy and Python: https://stackoverflow.com/questions/893657/how-do-i-calculate-r-squared-using-python-and-numpy
+  
+23. Corelations in Panda: https://www.w3schools.com/python/pandas/pandas_correlations.asp#:~:text=Finding%20Relationships,column%20in%20your%20data%20set.
+
+24. Creating a Heatmap using Matplotlib: https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
+
+25. Analysing Heatmaps: https://medium.com/@kulkarni.madhwaraj/heatmap-analysis-using-python-seaborn-and-matplotlib-f6f5d7da2f64
