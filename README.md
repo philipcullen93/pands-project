@@ -132,6 +132,30 @@ For the second set of histograms where it displays the breakdown of variables be
   - label="Setosa": Adds a legend entry for this dataset. The same is done for Veriscolor and Virginica.
   - color="blue": Fills the bars with blue. For Veriscolor blue is changed to "green", and for Virginica blue is changed to "red".
   - edgecolor='black': Outlines each bar in black.
+ 
+### Additional Analysis: Heatmap
+This script creates a heatmap using the correlation matrix between the values.
+
+It provides a visual showing the relationship between the variables, and thus can provide useful insights.
+
+- df_iris = pd.DataFrame(iris.data, columns=iris.feature_names)
+  - Converts the Iris dataset into a Pandas DataFrame and assigns names to the columns
+  - iris.data is the variable values
+  - iris.feature_names provides names for the columns (e.g., "sepal length (cm)").
+- corr = df_iris.corr()
+  - Computes the correlation matrix
+  - Correlation values range from 1 to -1
+    - 1 means perfect positive correlation between variables.
+    - 0 means no correlation between variables.
+    - -1 means perfect negative correlation between variables.
+- plt.figure()
+- plt.imshow(corr, cmap='coolwarm', interpolation='nearest')
+  - plt.figure() starts a new figure.
+  - plt.imshow() displays the corr matrix as an image, where colors represent values.
+  - cmap='coolwarm': Provides a color scale from blue (low correlation) to red (high).
+  - interpolation='nearest': This ensures that each cell is a solid block of color.
+- plt.colorbar()
+  - Adds a color scale legend to the side of the heatmap to show what the colors represent (e.g., red = 1.0, blue = -1.0).
 
 ## Discussion
 
