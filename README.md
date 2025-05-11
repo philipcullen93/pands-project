@@ -181,8 +181,13 @@ From the first 4 Histogras displaying each variable against frequency. We have m
 
 By breaking it down further and plotting each variable on the histograms by species, we can find more evidence to backup our earlier observations.
 
-- Fig 2.5. 
-- Fig 2.6.
-- Fig 2.7.
-- Fig 2.8.
+- Fig 2.5. There is a lot of overlap on this histogram between the various species. While we can see high peaks for Setosa (blue) and Virginica (red), the high degree of overlap suggests that Sepal Length remains a poor candidate for distinguishing between species.
+- Fig 2.6. Similarly to Fig 2.5., the high degree of overlap shows that Sepal Width remains a poor candidate for separating out species.
+- Fig 2.7. Petal Length shows a lot less overlap between species, particularly for Setosa where it has no overlap with other species. Furthermore, the is significantly less overlap between Veriscolor (green) and Virginica. This reinforces the idea that Petal Length is the best candidate for distinguishing between Iris species.
+- Fig 2.8. As with Fig 2.7., we can clearly see there is significantly less overlap. The three species bers are clearly represented and separated. Thus, Petal Width is a good candidate for separating the Iris species.
+
+The above observations suggest that using the Petal Length and Petal Width we can easily distinguish between the Iris species. 
+
+While Sepal Length and Sepal Width remain poor candidates, it is possible that graphing them against Petal Length and Petal Width could make them more useful for classification.
+
 ## References
