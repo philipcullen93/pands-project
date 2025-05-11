@@ -27,6 +27,8 @@ import matplotlib.pyplot as plt
 # From sklearn I sppecifically need the datasets module
 from sklearn import datasets
 
+import pandas as pd
+
 # Importing the Iris datset
 iris = datasets.load_iris()
 
@@ -327,3 +329,21 @@ plt.savefig("Scatter Plots/Fig 3.6. Iris Dataset - Petal Length vs. Petal Width.
 plt.show()
 
 # The reason for saving the scatter plots is that it allows easier access when trying to compare them.
+
+# Additional Analysis: Heatmap
+# Create a DataFrame of the Iris Dataset using Pandas.
+df_iris = pd.DataFrame(iris.data, columns=iris.feature_names)
+# Computes the corealation between the variables and displays the result
+corr = df_iris.corr()
+# Create the heatmap
+plt.figure()
+plt.imshow(corr, cmap='coolwarm', interpolation='nearest')
+plt.colorbar()
+# Set tick marks and labels
+plt.xticks(range(len(corr.columns)), corr.columns, rotation=45)
+plt.yticks(range(len(corr.columns)), corr.columns)
+# Add information to the heatmap
+plt.title('Fig 4.1 Variable Correlation Heatmap - Iris Dataset')
+plt.savefig("Fig 4.1 Variable Correlation Heatmap - Iris Dataset.png", dpi = 300)
+plt.tight_layout()
+plt.show()
