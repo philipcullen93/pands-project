@@ -107,7 +107,7 @@ Histogram Fig 2.1. Sepal Length vs Frequency
     - More important for the other histograms, that other colours are selected as to help differentiate between them.
   - edgecolor="black": Outlines each bar to make them visually distinct, and easier to read data.
  
-  3. Add Axis Labels and Title
+3. Add Axis Labels and Title
 - plt.xlabel("Sepal Length (cm)")
 - plt.ylabel("Frequency")
 - plt.title("Fig 2.1. Histogram of Sepal Length vs Frquency (cm)")
@@ -203,6 +203,8 @@ The Histograms can help support the observations seen when looking at the variab
 
 Below are the observation made by looking at the histograms plotting each variable against the frequency.
 
+All histograms with their associate data and Figure number (Fig X.X.) can be found in the Histograms folder.
+
 - Fig 2.1. Sepal length varies in frequency over the range. This indicates a good variability between species.
 - Fig 2.2. Sepal Width is more clustered. Since it is more clustered, there is less variation, further supporting the idea that it may not be ideal when trying to effectively classify species.
 - Fig 2.3. When looking at the Histogram for Petal Length, there is a sharp peak around 1.5 cm, this suggests that it may belong to a single species, while the other range (4 cm - 6 cm) represent the other two species. This provides more insight as to the idea that petal length may be a good variable to differeniate species from one another.
@@ -220,5 +222,19 @@ By breaking it down further and plotting each variable on the histograms by spec
 The above observations suggest that using the Petal Length and Petal Width we can easily classify the Iris species. 
 
 While Sepal Length and Sepal Width remain poor candidates, it is possible that graphing them against Petal Length and Petal Width could make them more useful for classification.
+
+# Task 3: Scatter Plots
+Combining scatter plots with R^2 values and linear regression lines helps us observe the relationships between the different species variables. It also proves insight into the physical differences between the species.
+
+R^2 values cover a range from 0 to 1. The closer a value is to 1 the more strongly related the variables are.
+
+All scatter splots with their associate data and Figure number (Fig X.X.) can be found in the Scatter Plots folder.
+
+- Fig 3.1. Sepal length vs Sepal Width: The first scatter plot showing Sepal Length vs. Sepal Width provides an R^2 value of 0.01. This indicates that there is a very poor relationship between Sepal Length and Sepal Width. There is no clear trend, as the data points are widely scatter. This supports the idea that neither Sepal Length and Sepal Width are useful for separating the Iris species. Additionally, it shows that using Sepal Length would not be good for predicting sepal width, and vice versa.
+- Fig 3.2. Sepal Length vs Petal Length: This scatter plots points are more clustered with an R^2 value of 0.76. There is a clearer trend in the data with more points falling closer to the linear regression line. This suggests that we could use Sepal length to predict Petal Length in Iris species. We can also see that there is a clearer separation between the species, we see that setosa tends to have short sepals and petals, while virginica has the large sepals and petals. This highlights the physical difference between the Iris species which could aid in classification.
+- Fig 3.3. Sepal Length vs Petal Width: The data points in this scatter plot are less tightly clustered, particularly for the Verisicolor and Viginica species, making the trend harder to observe. The R^2 value of 0.67 suggests that there is a moderate relationship between these two variables. However, the correlation is not strong enough to reliably use Sepal Length to predict Petal Width. This is especially evident in the Virginica species, which shows considerable variation in its data points.
+- Fig 3.4. Sepal Width vs Petal Length: There is significant scattering of data points across all Iris species. This is evident by the R² value of 0.18, indicating a very weak relationship between Sepal Width and Petal Length. As a result, Sepal Width cannot be utilised as a predictor of Petal Length. This further suggests that the physical differences between species are not strongly displayed through the relationship between these two features. Sepal Width does not vary consistently with Petal Length across the species, this makes it less useful for distinguishing or classifying them
+- Fig 3.5. Sepal Width vs Petal Width: Similarly to Fig 3.4. there is an extreme amount of scattering of the data points. It has a lower R^2 value of 0.13, this shows an even weaker relationship between the two variables. Therefore, Sepal Width is not a good indicator of Petal Length. Additionally, due to the large degree of scattering, the physical differences of the flowers are not expressed through the relationship of these values. 
+- Fig 3.6. Petal Length vs Petal Width: This plot displays a high degree of clustering of the data points. Each set of data points is grouped tightly together with a small degree of overlap. The R^2 value of 0.93, suggests a storng linear relationship between these two variables. Thus, we can see that Petal Length is a good predictor of Petal Width. From a pysical classification standpoint, it shows that Setosa has small short petals, Verisicolor has moderately sized petals, and Virginica has wide long petals. This provides evidence that Petal Length and Width can be used to classify the individual Iris species. It further supports the data seen in Task 1: Variable Summary and Task 2: Histograms.
 
 ## References
