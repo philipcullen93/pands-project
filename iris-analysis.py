@@ -346,8 +346,8 @@ plt.colorbar()
 # Set tick marks and labels
 plt.xticks(range(len(corr.columns)), corr.columns, rotation=45)
 plt.yticks(range(len(corr.columns)), corr.columns)
+plt.tight_layout()
 # Add information to the heatmap
 plt.title('Fig 4.1 Variable Correlation Heatmap - Iris Dataset')
 plt.savefig("Additional Analysis/Fig 4.1 Variable Correlation Heatmap - Iris Dataset.png", dpi = 200)
-plt.tight_layout()
 plt.show()
