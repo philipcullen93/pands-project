@@ -9,8 +9,8 @@
 
 # Setup
 # In this section, all packages and modules required for analysis
-# Additionally, any code required to provide variables to the data will be done here
-# Variables should allow for easier manipulation of the data for the required tasks
+# Additionally, any code required to provide variable names to the data will be done here
+# Variable names allow for easier manipulation of the data for the required tasks
 
 # sklearn is required to import the iris dataset
 import sklearn as skl
@@ -24,7 +24,7 @@ import os
 # matplotlib.pyplot is required to create the histograms and scatter plots
 import matplotlib.pyplot as plt
 
-# imports pandas module used to create a Pandas Dataframe for additional analysis
+# imports pandas package, this is used to create a Pandas Dataframe for additional analysis
 import pandas as pd
 
 # From sklearn I sppecifically need the datasets module
@@ -69,14 +69,14 @@ setosa_petal_w = data[target == 0, 3]
 versicolor_petal_w = data[target == 1, 3]
 virginica_petal_w = data[target == 2, 3]
 
-# give aliases to feature names to allow for easier manipulation later, basically separates out each column from the dataset.
+# gives variable names to data to allow for easier manipulation later, basically separates out each column from the dataset.
 # The columns in the dataset are the sepal length (cm), sepal width (cm), petal length (cm), and petal width (cm)
 sepal_l = data[:,0]
 sepal_w = data[:,1]
 petal_l = data[:,2]
 petal_w = data[:,3]
 
-#Task 1: Variable Summary
+# Task 1: Variable Summary
 np_data = np.array(data)
 column_names = iris.feature_names
 
