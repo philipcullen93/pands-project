@@ -89,7 +89,7 @@ column_names = iris.feature_names
 # opens/creates a file called column_statistics
 # this is because of the "w"
 # if the file does exist, it won't create a new file but will overwrite the existing file.
-with open("column_statistics.txt", "w") as f:
+with open("variable_summary.txt", "w") as f:
     for i in range(data.shape[1]):
         # extracts column i
         column = data[:, i]
