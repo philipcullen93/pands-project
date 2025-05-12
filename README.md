@@ -59,13 +59,13 @@ To run the program:
 Below offers a more indepth look at what each task does.
 
 ### Setup
-In the beginning of the code there is an initial setup step. The code provided in this section is used to import the data and any required modules. Furthermore, it isolates several features of the dataset, using variable names. Variable Naming allows the data to be more easily manipulated dueing tasks. There is additional code sections that are not required for the program to run successfully but that can be implemented to check to ensure the data being imported is correct and has been successfully imported.
+In the beginning of the code there is an initial setup step. The code provided in this section is used to import the data and any required modules. Furthermore, it isolates several features of the dataset, using variable names. Variable Naming allows the data to be more easily manipulated dueing tasks. There is additional code sections that are not required for the program to run successfully but that can be implemented to check to ensure the data being imported is correct and has been successfully imported [3] [4] [5] [6].
 
 ### Task 1: Variable Summary
 This task uses the program to calculate key statistics of the variables — Mean, Minimum, Maximum, Standard Deviation, and Median — and save the results in a .txt file called "column_ststistics".
 
 In order to do this effectively, the code needs to run through 4 important steps:
-1. Looping Through Each Column
+1. Looping Through Each Column [8]
 - for i in range(data.shape[1]):
   - Loops through each column in the NumPy data.
   - data.shape[1] returns the total number of columns.
@@ -75,12 +75,12 @@ In order to do this effectively, the code needs to run through 4 important steps
   - Uses NumPy slicing to extract column i from data.
   - : means "all rows", so data[:, i] means "column i of all rows"
 
-3. Writing the Results into the .txt file.
+3. Writing the Results into the .txt file. [7]
 - print(f"{column_names[i]}:", file=f)
   - Writes the name of the current column to the file.
   - file=f makes sure the output from the script is written into the .txt file and not the VSCode terminal.
 
-4. Calculating the Statisitcs
+4. Calculating the Statisitcs [9] [10] [11] [12] [13]
 - print("Mean:", float(np.mean(column)), file=f)
   - Uses the NumPy mean function to calculate the mean of each column
   - Adds the result to the column_statistics.txt file
@@ -93,13 +93,13 @@ The program also creates a folder called "Histograms", if one doesn't already ex
 
 Below is how the script works for one of the Histograms (Fig 2.1. Sepal Length (cm) vs Frequency). For the other the code remains realtively the same.
 
-Histogram Fig 2.1. Sepal Length vs Frequency
+Histogram Fig 2.1. Sepal Length vs Frequency [14]
 1. Create the "Histograms" folder.
 - os.makedirs("Histograms", exist_ok=True)
   - Creates a folder named Histograms if it doesn't already exist.
   - If one exists the script will not create a second.
 
-2. Plot the Histogram
+2. Plot the Histogram [15]
 - plt.hist(sepal_l, bins = 20, color = "blue", edgecolor = "black")
   - Plots the histogram for the variable sepal_l (Sepal Length).
   - bins = 20: Divides the data into 20 even spaces
@@ -113,7 +113,7 @@ Histogram Fig 2.1. Sepal Length vs Frequency
 - plt.title("Fig 2.1. Histogram of Sepal Length vs Frquency (cm)")
   - Adds an x-axis label, y-axis label, and title to the histogram.
 
-4. Save the Histogram
+4. Save the Histogram [16] [17]
 - plt.savefig("Histograms/Fig 2.1. Histogram of Sepal Length vs Frquency (cm).png", dpi=300)
   - Saves the resulting histogram in the Histograms folder as a .png file.
   - dpi = 300 ensures the output is in a high resolution.
@@ -142,24 +142,24 @@ As with Task 2: Histograms, provided below is the script for generating one of t
 
 The other scatter plots and calculations aare done in the same manner, just changing the variables.
 
-- slope, intercept = np.polyfit(sepal_l, sepal_w, 1)
+- slope, intercept = np.polyfit(sepal_l, sepal_w, 1) [19] [20]
   - Performs a 1st-degree polynomial fit to sepal_l (x-values) and sepal_w (y-values).
       - 1st-degree polynomial is a function in the form: y = mx + b (line equation)
   - Returns the slope and intercept of the best-fit line.
 - y_pred = slope * sepal_l + intercept
   - Calculates predicted y-values (Sepal Width) using the line equation.
-- r2 = 1 - np.sum((sepal_w - y_pred) ** 2) / np.sum((sepal_w - np.mean(sepal_w)) ** 2)
+- r2 = 1 - np.sum((sepal_w - y_pred) ** 2) / np.sum((sepal_w - np.mean(sepal_w)) ** 2) [22]
   - Calculates R^2 (coefficient of determination) 
 - colors = ['blue', 'green', 'red']
 - for i in range(3):
-- plt.scatter(sepal_l[target == i], sepal_w[target == i], color=colors[i], label=target_names[i])
+- plt.scatter(sepal_l[target == i], sepal_w[target == i], color=colors[i], label=target_names[i]) [18]
   - Loops through the 3 species and plots each group using a different color (blue, green, red) stated above.
   - target == i filters the data to only that species.
   - label=target_names[i] sets the names in the legend.
 - x_vals = np.linspace(min(sepal_l), max(sepal_l), 100)
   - Creates a smooth line using 100 x-values. Ensures even spacing.
   - Plots the regression line in black with a label for the legend.
-- plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit')
+- plt.plot(x_vals, slope * x_vals + intercept, color='black', label='Linear Fit') [21]
   - Plots the regression line in black and provides the label used in the legend.
 - plt.text(min(sepal_l) + 0.5, max(sepal_w) - 0.2, f'$R^2 = {r2:.2f}$', fontsize=12, bbox=dict(facecolor='white'))
   - Displays the R^2 value on the scatter plot.
@@ -169,7 +169,7 @@ This script creates a heatmap using the correlation matrix between the values.
 
 It provides a visual showing the relationship between the variables, and thus can provide useful insights.
 
-- df_iris = pd.DataFrame(iris.data, columns=iris.feature_names)
+- df_iris = pd.DataFrame(iris.data, columns=iris.feature_names) [23]
   - Converts the Iris dataset into a Pandas DataFrame and assigns names to the columns
   - iris.data is the variable values
   - iris.feature_names provides names for the columns (e.g., "sepal length (cm)").
@@ -180,7 +180,7 @@ It provides a visual showing the relationship between the variables, and thus ca
     - 0 means no correlation between variables.
     - -1 means perfect negative correlation between variables.
 - plt.figure()
-- plt.imshow(corr, cmap='coolwarm', interpolation='nearest')
+- plt.imshow(corr, cmap='coolwarm', interpolation='nearest') [24] [25]
   - plt.figure() starts a new figure.
   - plt.imshow() displays the corr matrix as an image, where colors represent values.
   - cmap='coolwarm': Provides a color scale from blue (low correlation) to red (high).
