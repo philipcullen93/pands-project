@@ -62,7 +62,7 @@ Below offers a more indepth look at what each task does.
 In the beginning of the code there is an initial setup step. The code provided in this section is used to import the data and any required modules. Furthermore, it isolates several features of the dataset, using variable names. Variable Naming allows the data to be more easily manipulated dueing tasks. There is additional code sections that are not required for the program to run successfully but that can be implemented to check to ensure the data being imported is correct and has been successfully imported [3] [4] [5] [6].
 
 ### Task 1: Variable Summary
-This task uses the program to calculate key statistics of the variables — Mean, Minimum, Maximum, Standard Deviation, and Median — and save the results in a .txt file called "column_ststistics".
+This task uses the program to calculate key statistics of the variables — Mean, Minimum, Maximum, Standard Deviation, and Median — and save the results in a .txt file called "variable_summary".
 
 In order to do this effectively, the code needs to run through 4 important steps:
 1. Looping Through Each Column [8]
@@ -83,7 +83,7 @@ In order to do this effectively, the code needs to run through 4 important steps
 4. Calculating the Statisitcs [9] [10] [11] [12] [13]
 - print("Mean:", float(np.mean(column)), file=f)
   - Uses the NumPy mean function to calculate the mean of each column
-  - Adds the result to the column_statistics.txt file
+  - Adds the result to the variable_summary.txt file
   - This is repeated using the minimum, maximum, standard deviation, and median Numpy functions.
 
 ### Task 2: Histograms of Variables
